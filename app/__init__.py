@@ -3,7 +3,7 @@ from flask import Flask  # type: ignore
 from flask.logging import default_handler  # type: ignore
 from flask_cors import CORS  # type: ignore
 
-from app.config import get_config_from_env
+from config import get_config_from_env
 
 
 def create_app():

@@ -3,8 +3,8 @@
 from flask import Blueprint, abort, request  # type: ignore
 from flask.globals import current_app  # type: ignore
 
-from app.config import get_config_from_env  # type: ignore
 from app.thirdparty.tgsdk import TelegramBot
+from config import get_config_from_env  # type: ignore
 
 bp = Blueprint("routes", __name__)
 telegram_bot = TelegramBot(get_config_from_env().TELEGRAM_TOKEN)
@@ -16,7 +16,7 @@ def send():
 
     :returns: bot response
     """
-    data = request.get_data()
+    data = request.get_json()
     try:
         message = data["message"]
         chat = data["chat"]
