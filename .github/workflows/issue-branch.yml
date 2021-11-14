@@ -12,7 +12,7 @@ jobs:
     steps:
     - name: Create Issue Branch
       id: Create_Issue_Branch
-      uses: robvanderleek/create-issue-branch@master
+      uses: robvanderleek/create-issue-branch@main
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     - name: Echo branch name
